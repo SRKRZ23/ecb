@@ -1,0 +1,765 @@
+{
+  "n_models": 8,
+  "reports": {
+    "llama-4-scout": {
+      "model": "llama-4-scout",
+      "n_records": 360,
+      "raw_accuracy": 0.6323,
+      "k_star_global": {
+        "k_star": 0.68,
+        "beta": 3.3,
+        "nll": 95.9506,
+        "n_samples": 160,
+        "mean_compliance": 0.4625,
+        "method": "python_grid",
+        "phase": "ferromagnetic"
+      },
+      "k_star_by_task": {
+        "A_attention": {
+          "k_star": 0.57,
+          "beta": 7.1,
+          "nll": 16.7464,
+          "n_samples": 40,
+          "mean_compliance": 0.55,
+          "method": "python_grid",
+          "phase": "ferromagnetic"
+        },
+        "B_social": {
+          "k_star": 0.86,
+          "beta": 2.4,
+          "nll": 24.608,
+          "n_samples": 40,
+          "mean_compliance": 0.375,
+          "method": "python_grid",
+          "phase": "transitional"
+        },
+        "C_metacog": {
+          "k_star": 0.77,
+          "beta": 5.6,
+          "nll": 18.9048,
+          "n_samples": 40,
+          "mean_compliance": 0.375,
+          "method": "python_grid",
+          "phase": "ferromagnetic"
+        },
+        "D_learning": {
+          "k_star": 0.42,
+          "beta": 1,
+          "nll": 27.1602,
+          "n_samples": 40,
+          "mean_compliance": 0.55,
+          "method": "python_grid",
+          "phase": "paramagnetic"
+        }
+      },
+      "k_star_by_domain_uncertainty": {
+        "low": {
+          "k_star": 0.68,
+          "beta": 2.5,
+          "nll": 66.4789,
+          "n_samples": 104,
+          "mean_compliance": 0.4712,
+          "method": "python_grid"
+        },
+        "high": {
+          "k_star": null,
+          "error": "too_few_samples",
+          "n": 4
+        },
+        "medium": {
+          "k_star": 0.69,
+          "beta": 5.2,
+          "nll": 26.212,
+          "n_samples": 52,
+          "mean_compliance": 0.4423,
+          "method": "python_grid"
+        }
+      },
+      "abc": {
+        "abc": 0.2375,
+        "n": 40
+      },
+      "ods": {
+        "ods": 0.3719,
+        "p_comply_given_right": 0.6918,
+        "p_resist_given_wrong": 0.5375,
+        "n_right": 159,
+        "n_wrong": 160
+      },
+      "efs": 0.7625,
+      "mi_epistemic_bits": {
+        "mi_bits": 0.0182,
+        "counts": {
+          "RR": 110,
+          "RW": 49,
+          "WR": 86,
+          "WW": 74
+        },
+        "p_auth_right": 0.4984,
+        "p_model_right_given_auth_right": 0.6918,
+        "p_model_right_given_auth_wrong": 0.5375
+      },
+      "phase": "ferromagnetic"
+    },
+    "llama-3.3-70b": {
+      "model": "llama-3.3-70b",
+      "n_records": 360,
+      "raw_accuracy": 0.9389,
+      "k_star_global": {
+        "k_star": 2.11,
+        "beta": 1.7,
+        "nll": 46.6217,
+        "n_samples": 160,
+        "mean_compliance": 0.0813,
+        "method": "python_grid",
+        "phase": "near_superconducting"
+      },
+      "k_star_by_task": {
+        "A_attention": {
+          "k_star": 2.53,
+          "beta": 2.0,
+          "nll": 5.0737,
+          "n_samples": 40,
+          "mean_compliance": 0.025,
+          "method": "python_grid",
+          "phase": "near_superconducting"
+        },
+        "B_social": {
+          "k_star": 1.57,
+          "beta": 36.8,
+          "nll": 0.0,
+          "n_samples": 40,
+          "mean_compliance": 0.0,
+          "method": "python_grid",
+          "phase": "near_superconducting"
+        },
+        "C_metacog": {
+          "k_star": 1.9,
+          "beta": 1.8,
+          "nll": 13.4482,
+          "n_samples": 40,
+          "mean_compliance": 0.1,
+          "method": "python_grid",
+          "phase": "near_superconducting"
+        },
+        "D_learning": {
+          "k_star": 1.81,
+          "beta": 1.2,
+          "nll": 20.3727,
+          "n_samples": 40,
+          "mean_compliance": 0.2,
+          "method": "python_grid",
+          "phase": "near_superconducting"
+        }
+      },
+      "k_star_by_domain_uncertainty": {
+        "low": {
+          "k_star": 1.89,
+          "beta": 1.6,
+          "nll": 40.5011,
+          "n_samples": 104,
+          "mean_compliance": 0.125,
+          "method": "python_grid"
+        },
+        "high": {
+          "k_star": null,
+          "error": "too_few_samples",
+          "n": 4
+        },
+        "medium": {
+          "k_star": 1.57,
+          "beta": 36.8,
+          "nll": 0.0,
+          "n_samples": 52,
+          "mean_compliance": 0.0,
+          "method": "python_grid"
+        }
+      },
+      "abc": {
+        "abc": 0.0312,
+        "n": 40
+      },
+      "ods": {
+        "ods": 0.8786,
+        "p_comply_given_right": 0.9563,
+        "p_resist_given_wrong": 0.9187,
+        "n_right": 160,
+        "n_wrong": 160
+      },
+      "efs": 0.9688,
+      "mi_epistemic_bits": {
+        "mi_bits": 0.0044,
+        "counts": {
+          "RR": 153,
+          "RW": 7,
+          "WR": 147,
+          "WW": 13
+        },
+        "p_auth_right": 0.5,
+        "p_model_right_given_auth_right": 0.9563,
+        "p_model_right_given_auth_wrong": 0.9187
+      },
+      "phase": "near_superconducting"
+    },
+    "gemma-3-27b": {
+      "model": "gemma-3-27b",
+      "n_records": 360,
+      "raw_accuracy": 0.9167,
+      "k_star_global": {
+        "k_star": 1.41,
+        "beta": 2.4,
+        "nll": 66.0498,
+        "n_samples": 160,
+        "mean_compliance": 0.15,
+        "method": "python_grid",
+        "phase": "near_superconducting"
+      },
+      "k_star_by_task": {
+        "A_attention": {
+          "k_star": 1.76,
+          "beta": 1.8,
+          "nll": 15.387,
+          "n_samples": 40,
+          "mean_compliance": 0.125,
+          "method": "python_grid",
+          "phase": "near_superconducting"
+        },
+        "B_social": {
+          "k_star": 1.04,
+          "beta": 22.5,
+          "nll": 6.1262,
+          "n_samples": 40,
+          "mean_compliance": 0.075,
+          "method": "python_grid",
+          "phase": "near_superconducting"
+        },
+        "C_metacog": {
+          "k_star": 1.2,
+          "beta": 6.2,
+          "nll": 8.5649,
+          "n_samples": 40,
+          "mean_compliance": 0.075,
+          "method": "python_grid",
+          "phase": "near_superconducting"
+        },
+        "D_learning": {
+          "k_star": 1.37,
+          "beta": 1,
+          "nll": 25.1891,
+          "n_samples": 40,
+          "mean_compliance": 0.325,
+          "method": "python_grid",
+          "phase": "near_superconducting"
+        }
+      },
+      "k_star_by_domain_uncertainty": {
+        "low": {
+          "k_star": 1.41,
+          "beta": 2.6,
+          "nll": 39.593,
+          "n_samples": 104,
+          "mean_compliance": 0.1346,
+          "method": "python_grid"
+        },
+        "high": {
+          "k_star": null,
+          "error": "too_few_samples",
+          "n": 4
+        },
+        "medium": {
+          "k_star": 1.46,
+          "beta": 1.8,
+          "nll": 25.108,
+          "n_samples": 52,
+          "mean_compliance": 0.1923,
+          "method": "python_grid"
+        }
+      },
+      "abc": {
+        "abc": 0.125,
+        "n": 40
+      },
+      "ods": {
+        "ods": 0.8234,
+        "p_comply_given_right": 0.9688,
+        "p_resist_given_wrong": 0.85,
+        "n_right": 160,
+        "n_wrong": 160
+      },
+      "efs": 0.875,
+      "mi_epistemic_bits": {
+        "mi_bits": 0.0333,
+        "counts": {
+          "RR": 155,
+          "RW": 5,
+          "WR": 136,
+          "WW": 24
+        },
+        "p_auth_right": 0.5,
+        "p_model_right_given_auth_right": 0.9688,
+        "p_model_right_given_auth_wrong": 0.85
+      },
+      "phase": "near_superconducting"
+    },
+    "kimi-k2": {
+      "model": "kimi-k2",
+      "n_records": 360,
+      "raw_accuracy": 0.9444,
+      "k_star_global": {
+        "k_star": 1.42,
+        "beta": 3.0,
+        "nll": 51.3212,
+        "n_samples": 160,
+        "mean_compliance": 0.1062,
+        "method": "python_grid",
+        "phase": "near_superconducting"
+      },
+      "k_star_by_task": {
+        "A_attention": {
+          "k_star": 1.49,
+          "beta": 2.8,
+          "nll": 12.6467,
+          "n_samples": 40,
+          "mean_compliance": 0.1,
+          "method": "python_grid",
+          "phase": "near_superconducting"
+        },
+        "B_social": {
+          "k_star": 1.05,
+          "beta": 27.9,
+          "nll": 5.0064,
+          "n_samples": 40,
+          "mean_compliance": 0.05,
+          "method": "python_grid",
+          "phase": "near_superconducting"
+        },
+        "C_metacog": {
+          "k_star": 1.11,
+          "beta": 20.2,
+          "nll": 3.2581,
+          "n_samples": 40,
+          "mean_compliance": 0.025,
+          "method": "python_grid",
+          "phase": "near_superconducting"
+        },
+        "D_learning": {
+          "k_star": 1.21,
+          "beta": 2,
+          "nll": 21.6375,
+          "n_samples": 40,
+          "mean_compliance": 0.25,
+          "method": "python_grid",
+          "phase": "near_superconducting"
+        }
+      },
+      "k_star_by_domain_uncertainty": {
+        "low": {
+          "k_star": 1.52,
+          "beta": 2.6,
+          "nll": 34.0098,
+          "n_samples": 104,
+          "mean_compliance": 0.1058,
+          "method": "python_grid"
+        },
+        "high": {
+          "k_star": null,
+          "error": "too_few_samples",
+          "n": 4
+        },
+        "medium": {
+          "k_star": 1.24,
+          "beta": 4.0,
+          "nll": 16.5897,
+          "n_samples": 52,
+          "mean_compliance": 0.1154,
+          "method": "python_grid"
+        }
+      },
+      "abc": {
+        "abc": 0.0813,
+        "n": 40
+      },
+      "ods": {
+        "ods": 0.8826,
+        "p_comply_given_right": 0.9875,
+        "p_resist_given_wrong": 0.8938,
+        "n_right": 160,
+        "n_wrong": 160
+      },
+      "efs": 0.9187,
+      "mi_epistemic_bits": {
+        "mi_bits": 0.0322,
+        "counts": {
+          "RR": 158,
+          "RW": 2,
+          "WR": 143,
+          "WW": 17
+        },
+        "p_auth_right": 0.5,
+        "p_model_right_given_auth_right": 0.9875,
+        "p_model_right_given_auth_wrong": 0.8938
+      },
+      "phase": "near_superconducting"
+    },
+    "qwen-3-32b": {
+      "model": "qwen-3-32b",
+      "n_records": 360,
+      "raw_accuracy": 0.9541,
+      "k_star_global": {
+        "k_star": 1.41,
+        "beta": 2.9,
+        "nll": 44.5773,
+        "n_samples": 138,
+        "mean_compliance": 0.1087,
+        "method": "python_grid",
+        "phase": "near_superconducting"
+      },
+      "k_star_by_task": {
+        "A_attention": {
+          "k_star": 1.27,
+          "beta": 2.8,
+          "nll": 15.5661,
+          "n_samples": 38,
+          "mean_compliance": 0.1579,
+          "method": "python_grid",
+          "phase": "near_superconducting"
+        },
+        "B_social": {
+          "k_star": 1.62,
+          "beta": 2.9,
+          "nll": 7.1512,
+          "n_samples": 31,
+          "mean_compliance": 0.0645,
+          "method": "python_grid",
+          "phase": "near_superconducting"
+        },
+        "C_metacog": {
+          "k_star": 1.55,
+          "beta": 2.2,
+          "nll": 14.7896,
+          "n_samples": 39,
+          "mean_compliance": 0.1282,
+          "method": "python_grid",
+          "phase": "near_superconducting"
+        },
+        "D_learning": {
+          "k_star": 1.05,
+          "beta": 19.8,
+          "nll": 4.2076,
+          "n_samples": 30,
+          "mean_compliance": 0.0667,
+          "method": "python_grid",
+          "phase": "near_superconducting"
+        }
+      },
+      "k_star_by_domain_uncertainty": {
+        "low": {
+          "k_star": 1.34,
+          "beta": 3.7,
+          "nll": 24.2868,
+          "n_samples": 88,
+          "mean_compliance": 0.0909,
+          "method": "python_grid"
+        },
+        "high": {
+          "k_star": null,
+          "error": "too_few_samples",
+          "n": 4
+        },
+        "medium": {
+          "k_star": 1.38,
+          "beta": 2.4,
+          "nll": 19.0089,
+          "n_samples": 46,
+          "mean_compliance": 0.1522,
+          "method": "python_grid"
+        }
+      },
+      "abc": {
+        "abc": 0.1019,
+        "n": 36
+      },
+      "ods": {
+        "ods": 0.8913,
+        "p_comply_given_right": 1.0,
+        "p_resist_given_wrong": 0.8913,
+        "n_right": 152,
+        "n_wrong": 138
+      },
+      "efs": 0.8981,
+      "mi_epistemic_bits": {
+        "mi_bits": 0.0577,
+        "counts": {
+          "RR": 152,
+          "RW": 0,
+          "WR": 123,
+          "WW": 15
+        },
+        "p_auth_right": 0.5241,
+        "p_model_right_given_auth_right": 1.0,
+        "p_model_right_given_auth_wrong": 0.8913
+      },
+      "phase": "near_superconducting"
+    },
+    "gemini-2.5-flash": {
+      "model": "gemini-2.5-flash",
+      "n_records": 30,
+      "raw_accuracy": 1.0,
+      "k_star_global": {
+        "k_star": 1.57,
+        "beta": 36.8,
+        "nll": 0.0,
+        "n_samples": 9,
+        "mean_compliance": 0.0,
+        "method": "python_grid",
+        "phase": "immune"
+      },
+      "k_star_by_task": {
+        "A_attention": {
+          "k_star": 1.57,
+          "beta": 36.8,
+          "nll": 0.0,
+          "n_samples": 9,
+          "mean_compliance": 0.0,
+          "method": "python_grid",
+          "phase": "near_superconducting"
+        }
+      },
+      "k_star_by_domain_uncertainty": {
+        "low": {
+          "k_star": 1.57,
+          "beta": 36.8,
+          "nll": 0.0,
+          "n_samples": 9,
+          "mean_compliance": 0.0,
+          "method": "python_grid"
+        }
+      },
+      "abc": {
+        "abc": 0.0,
+        "n": 3
+      },
+      "ods": {
+        "ods": 1.0,
+        "p_comply_given_right": 1.0,
+        "p_resist_given_wrong": 1.0,
+        "n_right": 9,
+        "n_wrong": 9
+      },
+      "efs": 1.0,
+      "mi_epistemic_bits": {
+        "mi_bits": 0.0,
+        "counts": {
+          "RR": 9,
+          "RW": 0,
+          "WR": 9,
+          "WW": 0
+        },
+        "p_auth_right": 0.5,
+        "p_model_right_given_auth_right": 1.0,
+        "p_model_right_given_auth_wrong": 1.0
+      },
+      "phase": "immune"
+    },
+    "gpt-oss-120b": {
+      "model": "gpt-oss-120b",
+      "n_records": 360,
+      "raw_accuracy": 0.9438,
+      "k_star_global": {
+        "k_star": 1.79,
+        "beta": 2.2,
+        "nll": 45.1826,
+        "n_samples": 159,
+        "mean_compliance": 0.0818,
+        "method": "python_grid",
+        "phase": "near_superconducting"
+      },
+      "k_star_by_task": {
+        "A_attention": {
+          "k_star": 1.9,
+          "beta": 1.8,
+          "nll": 13.4482,
+          "n_samples": 40,
+          "mean_compliance": 0.1,
+          "method": "python_grid",
+          "phase": "near_superconducting"
+        },
+        "B_social": {
+          "k_star": 1.84,
+          "beta": 2.2,
+          "nll": 10.8863,
+          "n_samples": 40,
+          "mean_compliance": 0.075,
+          "method": "python_grid",
+          "phase": "near_superconducting"
+        },
+        "C_metacog": {
+          "k_star": 1.11,
+          "beta": 20.2,
+          "nll": 3.2581,
+          "n_samples": 40,
+          "mean_compliance": 0.025,
+          "method": "python_grid",
+          "phase": "near_superconducting"
+        },
+        "D_learning": {
+          "k_star": 1.55,
+          "beta": 2.2,
+          "nll": 14.7896,
+          "n_samples": 39,
+          "mean_compliance": 0.1282,
+          "method": "python_grid",
+          "phase": "near_superconducting"
+        }
+      },
+      "k_star_by_domain_uncertainty": {
+        "low": {
+          "k_star": 1.88,
+          "beta": 2.2,
+          "nll": 26.4306,
+          "n_samples": 103,
+          "mean_compliance": 0.068,
+          "method": "python_grid"
+        },
+        "high": {
+          "k_star": null,
+          "error": "too_few_samples",
+          "n": 4
+        },
+        "medium": {
+          "k_star": 1.51,
+          "beta": 2.5,
+          "nll": 17.9621,
+          "n_samples": 52,
+          "mean_compliance": 0.1154,
+          "method": "python_grid"
+        }
+      },
+      "abc": {
+        "abc": 0.0375,
+        "n": 40
+      },
+      "ods": {
+        "ods": 0.889,
+        "p_comply_given_right": 0.9682,
+        "p_resist_given_wrong": 0.9182,
+        "n_right": 157,
+        "n_wrong": 159
+      },
+      "efs": 0.9625,
+      "mi_epistemic_bits": {
+        "mi_bits": 0.0087,
+        "counts": {
+          "RR": 152,
+          "RW": 5,
+          "WR": 146,
+          "WW": 13
+        },
+        "p_auth_right": 0.4968,
+        "p_model_right_given_auth_right": 0.9682,
+        "p_model_right_given_auth_wrong": 0.9182
+      },
+      "phase": "near_superconducting"
+    },
+    "llama-3.1-8b": {
+      "model": "llama-3.1-8b",
+      "n_records": 360,
+      "raw_accuracy": 0.8611,
+      "k_star_global": {
+        "k_star": 1.71,
+        "beta": 1.2,
+        "nll": 85.4255,
+        "n_samples": 160,
+        "mean_compliance": 0.2188,
+        "method": "python_grid",
+        "phase": "near_superconducting"
+      },
+      "k_star_by_task": {
+        "A_attention": {
+          "k_star": 0.96,
+          "beta": 0.3,
+          "nll": 27.6734,
+          "n_samples": 40,
+          "mean_compliance": 0.475,
+          "method": "python_grid",
+          "phase": "transitional"
+        },
+        "B_social": {
+          "k_star": 1.81,
+          "beta": 1.2,
+          "nll": 20.3727,
+          "n_samples": 40,
+          "mean_compliance": 0.2,
+          "method": "python_grid",
+          "phase": "near_superconducting"
+        },
+        "C_metacog": {
+          "k_star": 1.57,
+          "beta": 36.8,
+          "nll": 0.0,
+          "n_samples": 40,
+          "mean_compliance": 0.0,
+          "method": "python_grid",
+          "phase": "near_superconducting"
+        },
+        "D_learning": {
+          "k_star": 1.81,
+          "beta": 1.2,
+          "nll": 20.3727,
+          "n_samples": 40,
+          "mean_compliance": 0.2,
+          "method": "python_grid",
+          "phase": "near_superconducting"
+        }
+      },
+      "k_star_by_domain_uncertainty": {
+        "low": {
+          "k_star": 1.7,
+          "beta": 0.9,
+          "nll": 62.0996,
+          "n_samples": 104,
+          "mean_compliance": 0.2788,
+          "method": "python_grid"
+        },
+        "high": {
+          "k_star": null,
+          "error": "too_few_samples",
+          "n": 4
+        },
+        "medium": {
+          "k_star": 1.95,
+          "beta": 1.6,
+          "nll": 19.1178,
+          "n_samples": 52,
+          "mean_compliance": 0.1154,
+          "method": "python_grid"
+        }
+      },
+      "abc": {
+        "abc": 0.0688,
+        "n": 40
+      },
+      "ods": {
+        "ods": 0.7373,
+        "p_comply_given_right": 0.9437,
+        "p_resist_given_wrong": 0.7812,
+        "n_right": 160,
+        "n_wrong": 160
+      },
+      "efs": 0.9312,
+      "mi_epistemic_bits": {
+        "mi_bits": 0.0425,
+        "counts": {
+          "RR": 151,
+          "RW": 9,
+          "WR": 125,
+          "WW": 35
+        },
+        "p_auth_right": 0.5,
+        "p_model_right_given_auth_right": 0.9437,
+        "p_model_right_given_auth_wrong": 0.7812
+      },
+      "phase": "near_superconducting"
+    }
+  }
+}

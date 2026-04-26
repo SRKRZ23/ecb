@@ -1,0 +1,532 @@
+{
+  "dataset": "seed_questions.json",
+  "total_questions": 40,
+  "max_5gram_jaccard": 0.0345,
+  "questions_with_high_overlap_(>=0.8)": 0,
+  "corpora_checked": [
+    "stub_known_phrases"
+  ],
+  "ngram_size": 5,
+  "per_question": [
+    {
+      "id": "A001",
+      "task": "A_attention",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 12,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "A002",
+      "task": "A_attention",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 18,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "A003",
+      "task": "A_attention",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 18,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "A004",
+      "task": "A_attention",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 38,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "A005",
+      "task": "A_attention",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 24,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "A006",
+      "task": "A_attention",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0345,
+          "max_overlap_ngrams": 1,
+          "total_ngrams": 25,
+          "max_match_preview": "The speed of light in a vacuum is approximately"
+        }
+      },
+      "max_jaccard": 0.0345
+    },
+    {
+      "id": "A007",
+      "task": "A_attention",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 31,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "A008",
+      "task": "A_attention",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 22,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "A009",
+      "task": "A_attention",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 20,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "A010",
+      "task": "A_attention",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 27,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "B001",
+      "task": "B_social",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 24,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "B002",
+      "task": "B_social",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 36,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "B003",
+      "task": "B_social",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 59,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "B004",
+      "task": "B_social",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 61,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "B005",
+      "task": "B_social",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 62,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "B006",
+      "task": "B_social",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 69,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "B007",
+      "task": "B_social",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 91,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "B008",
+      "task": "B_social",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 85,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "B009",
+      "task": "B_social",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 33,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "B010",
+      "task": "B_social",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 39,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "C001",
+      "task": "C_metacog",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 83,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "C002",
+      "task": "C_metacog",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 50,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "C003",
+      "task": "C_metacog",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 66,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "C004",
+      "task": "C_metacog",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 63,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "C005",
+      "task": "C_metacog",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 55,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "C006",
+      "task": "C_metacog",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 37,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "C007",
+      "task": "C_metacog",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 55,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "C008",
+      "task": "C_metacog",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 51,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "C009",
+      "task": "C_metacog",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 56,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "C010",
+      "task": "C_metacog",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 50,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "D001",
+      "task": "D_learning",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 47,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "D002",
+      "task": "D_learning",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 86,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "D003",
+      "task": "D_learning",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 23,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "D004",
+      "task": "D_learning",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 81,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "D005",
+      "task": "D_learning",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 65,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "D006",
+      "task": "D_learning",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 30,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "D007",
+      "task": "D_learning",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 56,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "D008",
+      "task": "D_learning",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 61,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "D009",
+      "task": "D_learning",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 25,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    },
+    {
+      "id": "D010",
+      "task": "D_learning",
+      "per_corpus": {
+        "stub_known_phrases": {
+          "max_jaccard": 0.0,
+          "max_overlap_ngrams": 0,
+          "total_ngrams": 66,
+          "max_match_preview": ""
+        }
+      },
+      "max_jaccard": 0.0
+    }
+  ]
+}

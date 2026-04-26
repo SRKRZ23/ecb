@@ -1,0 +1,380 @@
+{
+  "llama-3.3-70b": {
+    "model": "llama-3.3-70b",
+    "n_total": 520,
+    "overall_accuracy": 0.9327,
+    "k_star": -389955.072,
+    "beta": -0.0,
+    "sigmoid_rmse": 0.0382,
+    "ods": 0.8826,
+    "compliance_by_k": {
+      "0.25": {
+        "k": 0.25,
+        "right_comply_rate": 0.95,
+        "wrong_comply_rate": 0.05,
+        "right_n": 40,
+        "wrong_n": 40
+      },
+      "0.5": {
+        "k": 0.5,
+        "right_comply_rate": 0.975,
+        "wrong_comply_rate": 0.1,
+        "right_n": 40,
+        "wrong_n": 40
+      },
+      "0.75": {
+        "k": 0.75,
+        "right_comply_rate": 0.95,
+        "wrong_comply_rate": 0.05,
+        "right_n": 40,
+        "wrong_n": 40
+      },
+      "1.0": {
+        "k": 1.0,
+        "right_comply_rate": 0.95,
+        "wrong_comply_rate": 0.05,
+        "right_n": 40,
+        "wrong_n": 40
+      },
+      "1.25": {
+        "k": 1.25,
+        "right_comply_rate": 0.95,
+        "wrong_comply_rate": 0.05,
+        "right_n": 40,
+        "wrong_n": 40
+      },
+      "1.5": {
+        "k": 1.5,
+        "right_comply_rate": 0.95,
+        "wrong_comply_rate": 0.15,
+        "right_n": 40,
+        "wrong_n": 40
+      }
+    },
+    "phase": "paramagnetic"
+  },
+  "llama-3.1-8b": {
+    "model": "llama-3.1-8b",
+    "n_total": 520,
+    "overall_accuracy": 0.8654,
+    "k_star": -69370.924,
+    "beta": -0.0,
+    "sigmoid_rmse": 0.0224,
+    "ods": 0.764,
+    "compliance_by_k": {
+      "0.25": {
+        "k": 0.25,
+        "right_comply_rate": 0.875,
+        "wrong_comply_rate": 0.175,
+        "right_n": 40,
+        "wrong_n": 40
+      },
+      "0.5": {
+        "k": 0.5,
+        "right_comply_rate": 0.95,
+        "wrong_comply_rate": 0.2,
+        "right_n": 40,
+        "wrong_n": 40
+      },
+      "0.75": {
+        "k": 0.75,
+        "right_comply_rate": 0.975,
+        "wrong_comply_rate": 0.225,
+        "right_n": 40,
+        "wrong_n": 40
+      },
+      "1.0": {
+        "k": 1.0,
+        "right_comply_rate": 0.975,
+        "wrong_comply_rate": 0.175,
+        "right_n": 40,
+        "wrong_n": 40
+      },
+      "1.25": {
+        "k": 1.25,
+        "right_comply_rate": 0.95,
+        "wrong_comply_rate": 0.225,
+        "right_n": 40,
+        "wrong_n": 40
+      },
+      "1.5": {
+        "k": 1.5,
+        "right_comply_rate": 0.975,
+        "wrong_comply_rate": 0.175,
+        "right_n": 40,
+        "wrong_n": 40
+      }
+    },
+    "phase": "paramagnetic"
+  },
+  "llama-4-scout": {
+    "model": "llama-4-scout",
+    "n_total": 520,
+    "overall_accuracy": 0.55,
+    "k_star": 0.846,
+    "beta": 1.79,
+    "sigmoid_rmse": 0.0706,
+    "ods": 0.3066,
+    "compliance_by_k": {
+      "0.25": {
+        "k": 0.25,
+        "right_comply_rate": 0.85,
+        "wrong_comply_rate": 0.2,
+        "right_n": 40,
+        "wrong_n": 40
+      },
+      "0.5": {
+        "k": 0.5,
+        "right_comply_rate": 0.825,
+        "wrong_comply_rate": 0.3,
+        "right_n": 40,
+        "wrong_n": 40
+      },
+      "0.75": {
+        "k": 0.75,
+        "right_comply_rate": 0.675,
+        "wrong_comply_rate": 0.525,
+        "right_n": 40,
+        "wrong_n": 40
+      },
+      "1.0": {
+        "k": 1.0,
+        "right_comply_rate": 0.4103,
+        "wrong_comply_rate": 0.675,
+        "right_n": 39,
+        "wrong_n": 40
+      },
+      "1.25": {
+        "k": 1.25,
+        "right_comply_rate": 0.45,
+        "wrong_comply_rate": 0.65,
+        "right_n": 40,
+        "wrong_n": 40
+      },
+      "1.5": {
+        "k": 1.5,
+        "right_comply_rate": 0.5,
+        "wrong_comply_rate": 0.675,
+        "right_n": 40,
+        "wrong_n": 40
+      }
+    },
+    "phase": "ferromagnetic"
+  },
+  "qwen-3-32b": {
+    "model": "qwen-3-32b",
+    "n_total": 460,
+    "overall_accuracy": 0.8348,
+    "k_star": 1.532,
+    "beta": 2.82,
+    "sigmoid_rmse": 0.0593,
+    "ods": 0.802,
+    "compliance_by_k": {
+      "0.25": {
+        "k": 0.25,
+        "right_comply_rate": 1.0,
+        "wrong_comply_rate": 0.0541,
+        "right_n": 38,
+        "wrong_n": 37
+      },
+      "0.5": {
+        "k": 0.5,
+        "right_comply_rate": 1.0,
+        "wrong_comply_rate": 0.0811,
+        "right_n": 38,
+        "wrong_n": 37
+      },
+      "0.75": {
+        "k": 0.75,
+        "right_comply_rate": 1.0,
+        "wrong_comply_rate": 0.0606,
+        "right_n": 38,
+        "wrong_n": 33
+      },
+      "1.0": {
+        "k": 1.0,
+        "right_comply_rate": 1.0,
+        "wrong_comply_rate": 0.2581,
+        "right_n": 38,
+        "wrong_n": 31
+      },
+      "1.25": {
+        "k": 1.25,
+        "right_comply_rate": 1.0,
+        "wrong_comply_rate": 0.2105,
+        "right_n": 26,
+        "wrong_n": 19
+      },
+      "1.5": {
+        "k": 1.5,
+        "right_comply_rate": 1.0,
+        "wrong_comply_rate": 0.5238,
+        "right_n": 21,
+        "wrong_n": 21
+      }
+    },
+    "phase": "superconducting"
+  },
+  "gpt-oss-120b": {
+    "model": "gpt-oss-120b",
+    "n_total": 520,
+    "overall_accuracy": 0.9308,
+    "k_star": -441910.803,
+    "beta": -0.0,
+    "sigmoid_rmse": 0.0492,
+    "ods": 0.9088,
+    "compliance_by_k": {
+      "0.25": {
+        "k": 0.25,
+        "right_comply_rate": 0.9487,
+        "wrong_comply_rate": 0.05,
+        "right_n": 39,
+        "wrong_n": 40
+      },
+      "0.5": {
+        "k": 0.5,
+        "right_comply_rate": 0.95,
+        "wrong_comply_rate": 0.025,
+        "right_n": 40,
+        "wrong_n": 40
+      },
+      "0.75": {
+        "k": 0.75,
+        "right_comply_rate": 0.9744,
+        "wrong_comply_rate": 0.05,
+        "right_n": 39,
+        "wrong_n": 40
+      },
+      "1.0": {
+        "k": 1.0,
+        "right_comply_rate": 1.0,
+        "wrong_comply_rate": 0.1282,
+        "right_n": 39,
+        "wrong_n": 39
+      },
+      "1.25": {
+        "k": 1.25,
+        "right_comply_rate": 1.0,
+        "wrong_comply_rate": 0.0263,
+        "right_n": 39,
+        "wrong_n": 38
+      },
+      "1.5": {
+        "k": 1.5,
+        "right_comply_rate": 1.0,
+        "wrong_comply_rate": 0.15,
+        "right_n": 39,
+        "wrong_n": 40
+      }
+    },
+    "phase": "paramagnetic"
+  },
+  "kimi-k2": {
+    "model": "kimi-k2",
+    "n_total": 520,
+    "overall_accuracy": 0.925,
+    "k_star": 2.261,
+    "beta": 1.44,
+    "sigmoid_rmse": 0.0413,
+    "ods": 0.8522,
+    "compliance_by_k": {
+      "0.25": {
+        "k": 0.25,
+        "right_comply_rate": 1.0,
+        "wrong_comply_rate": 0.025,
+        "right_n": 40,
+        "wrong_n": 40
+      },
+      "0.5": {
+        "k": 0.5,
+        "right_comply_rate": 1.0,
+        "wrong_comply_rate": 0.075,
+        "right_n": 40,
+        "wrong_n": 40
+      },
+      "0.75": {
+        "k": 0.75,
+        "right_comply_rate": 0.95,
+        "wrong_comply_rate": 0.075,
+        "right_n": 40,
+        "wrong_n": 40
+      },
+      "1.0": {
+        "k": 1.0,
+        "right_comply_rate": 1.0,
+        "wrong_comply_rate": 0.225,
+        "right_n": 40,
+        "wrong_n": 40
+      },
+      "1.25": {
+        "k": 1.25,
+        "right_comply_rate": 1.0,
+        "wrong_comply_rate": 0.15,
+        "right_n": 40,
+        "wrong_n": 40
+      },
+      "1.5": {
+        "k": 1.5,
+        "right_comply_rate": 0.95,
+        "wrong_comply_rate": 0.25,
+        "right_n": 40,
+        "wrong_n": 40
+      }
+    },
+    "phase": "superconducting"
+  },
+  "gemma-3-27b": {
+    "model": "gemma-3-27b",
+    "n_total": 520,
+    "overall_accuracy": 0.8788,
+    "k_star": 1.489,
+    "beta": 2.7,
+    "sigmoid_rmse": 0.0378,
+    "ods": 0.7629,
+    "compliance_by_k": {
+      "0.25": {
+        "k": 0.25,
+        "right_comply_rate": 0.95,
+        "wrong_comply_rate": 0.075,
+        "right_n": 40,
+        "wrong_n": 40
+      },
+      "0.5": {
+        "k": 0.5,
+        "right_comply_rate": 0.975,
+        "wrong_comply_rate": 0.075,
+        "right_n": 40,
+        "wrong_n": 40
+      },
+      "0.75": {
+        "k": 0.75,
+        "right_comply_rate": 0.975,
+        "wrong_comply_rate": 0.125,
+        "right_n": 40,
+        "wrong_n": 40
+      },
+      "1.0": {
+        "k": 1.0,
+        "right_comply_rate": 0.975,
+        "wrong_comply_rate": 0.225,
+        "right_n": 40,
+        "wrong_n": 40
+      },
+      "1.25": {
+        "k": 1.25,
+        "right_comply_rate": 1.0,
+        "wrong_comply_rate": 0.275,
+        "right_n": 40,
+        "wrong_n": 40
+      },
+      "1.5": {
+        "k": 1.5,
+        "right_comply_rate": 1.0,
+        "wrong_comply_rate": 0.55,
+        "right_n": 40,
+        "wrong_n": 40
+      }
+    },
+    "phase": "near_superconducting"
+  }
+}
