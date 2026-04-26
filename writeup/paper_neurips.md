@@ -4,7 +4,8 @@
 **Contact:** razikovsardor1@gmail.com  
 **Submitted to:** NeurIPS 2026 (track: Datasets and Benchmarks)  
 **arXiv:** submitted April 26, 2026 (ID pending)  
-**Data & Code:** huggingface.co/datasets/ZeroR3/ecb · code: github.com/SRKRZ23/ecb
+**Data & Code:** huggingface.co/datasets/ZeroR3/ecb · code: github.com/SRKRZ23/ecb  
+**DOI:** 10.5281/zenodo.19791329
 
 ---
 
