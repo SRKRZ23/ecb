@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>paper_neurips</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+<style>
+body { font-family: "Times New Roman", Times, serif; font-size: 11pt; line-height: 1.5; max-width: 6.5in; margin: 0 auto; padding: 0.75in; color: #000; }
+h1 { font-size: 15pt; font-weight: bold; text-align: center; margin-bottom: 6pt; }
+h2 { font-size: 13pt; font-weight: bold; margin-top: 20pt; margin-bottom: 6pt; border-bottom: 1px solid #ccc; padding-bottom: 3pt; }
+h3 { font-size: 11pt; font-weight: bold; margin-top: 12pt; margin-bottom: 4pt; }
+p { margin: 6pt 0; text-align: justify; }
+table { border-collapse: collapse; width: 100%; font-size: 9pt; margin: 10pt 0; }
+th, td { border: 1px solid #888; padding: 4pt 6pt; text-align: left; }
+th { background: #f0f0f0; font-weight: bold; }
+code { font-family: "Courier New", monospace; font-size: 9pt; background: #f5f5f5; padding: 1pt 3pt; border: 1px solid #e0e0e0; }
+pre { font-family: "Courier New", monospace; font-size: 9pt; background: #f5f5f5; padding: 8pt; border: 1px solid #ddd; white-space: pre-wrap; word-wrap: break-word; margin: 8pt 0; }
+pre code { background: none; border: none; padding: 0; }
+hr { border: none; border-top: 1px solid #ccc; margin: 16pt 0; }
+ul, ol { margin: 6pt 0; padding-left: 24pt; }
+li { margin: 3pt 0; }
+@page { margin: 1in; size: letter; }
+</style>
+</head>
+<body>
+<h1
+id="phase-transitions-in-llm-epistemic-autonomy-the-epistemic-curie-temperature">Phase
+Transitions in LLM Epistemic Autonomy: The Epistemic Curie
+Temperature</h1>
+<p><strong>Authors:</strong> Sardor Razikov, Independent
+Researcher<br />
+<strong>Contact:</strong> razikovsardor1@gmail.com<br />
+<strong>Submitted to:</strong> NeurIPS 2026 (track: Datasets and
+Benchmarks)<br />
+<strong>arXiv:</strong> submitted April 26, 2026 (ID pending)<br />
+<strong>Data &amp; Code:</strong> huggingface.co/datasets/ZeroR3/ecb ·
+code: github.com/SRKRZ23/ecb<br />
+<strong>DOI:</strong> 10.5281/zenodo.19791329</p>
+<hr />
+<h2 id="abstract">Abstract</h2>
+<p>We introduce the <strong>Epistemic Curie Benchmark (ECB)</strong> and
+the <strong>Epistemic Curie Temperature (ECT)</strong>, a
+physics-motivated framework for measuring when large language models
+surrender independent reasoning under authority pressure. Drawing an
+analogy to the Curie temperature in ferromagnetism — the critical point
+at which a magnet loses spontaneous ordering — we define <em>k*</em> as
+the authority level at which an LLM undergoes a sharp phase transition
+from epistemic independence to authority capture, modeled by the sigmoid
+P(comply | k) = σ(β(k − k*)). We measure k* and β for <strong>seven
+frontier models</strong> from five laboratories across <strong>2,520
+measurements</strong>, establishing both a reproducible benchmark and a
+new information-theoretic AGI progress metric (MI_epistemic, 1.0-bit
+theoretical ceiling; max observed 0.058 bits). Llama-4-Scout is the
+first LLM with a measured k* within our probe range (k* = 0.68,
+ferromagnetic phase); six others exceed k* &gt; 1.0
+(near-superconducting). We provide open data, reproducible code, and a
+deployment-safety framework derived from ECT phase classification.</p>
+<hr />
+<h2 id="introduction">1. Introduction</h2>
+<p>Recent benchmarks reveal that frontier LLMs often <em>know</em> the
+correct answer yet <em>abandon</em> it when authority pressure is
+introduced: an adversarial expert claim, institutional consensus
+framing, or persistent conversational pressure causes models to
+capitulate even against clearly correct prior knowledge (Asch, 1956;
+Milgram, 1963). Despite convergence on this phenomenon across multiple
+independent studies (Vodrahalli et al., 2024; Wang et al., 2023), no
+existing framework provides:</p>
+<ol type="1">
+<li>A <strong>unified theoretical account</strong> connecting
+adversarial context, authority framing, and consensus pressure as points
+on a single continuous scale</li>
+<li>A <strong>quantitative fingerprint</strong> of each model’s
+epistemic behavior (two parameters vs. a single accuracy number)</li>
+<li>A <strong>continuous AGI progress metric</strong> calibrated against
+authority-independence</li>
+</ol>
+<p>This paper addresses all three gaps. We formalize the analogy between
+ferromagnetic phase transitions and LLM epistemic behavior, introduce
+ECB as the measurement instrument, and report the first empirical
+measurement of Epistemic Curie Temperatures across frontier models.</p>
+<p><strong>Contributions:</strong> - ECT formalism: P(comply | k) =
+σ(β(k − k*)) with four falsifiable theorems - ECB dataset: 40
+contamination-checked questions × 9 authority variants = 360
+prompts/model - k* measurements for 7 frontier models with 95% bootstrap
+confidence intervals - MI_epistemic: first information-theoretic AGI
+progress scalar calibrated to authority discrimination - Deployment
+safety framework: phase classification → minimum deployment thresholds -
+Open replication package: all data, code, and analysis scripts</p>
+<hr />
+<h2 id="related-work">2. Related Work</h2>
+<h3 id="authority-bias-and-sycophancy-in-llms">2.1 Authority Bias and
+Sycophancy in LLMs</h3>
+<p>Sycophancy — the tendency of LLMs to agree with user positions
+regardless of correctness — is well-documented (Perez et al., 2022;
+Sharma et al., 2023). Turpin et al. (2023) show that chain-of-thought
+models systematically shift answers when answer choices are annotated
+with authority signals. Laban et al. (2023) demonstrate that even
+factually correct refusals are reversed under persistent pressure.
+<strong>Our contribution:</strong> these studies measure sycophancy as a
+scalar accuracy delta. ECT provides a <em>parameter</em> (k*) that
+predicts at which authority level the transition occurs, enabling
+targeted model hardening.</p>
+<h3 id="adversarial-robustness-benchmarks">2.2 Adversarial Robustness
+Benchmarks</h3>
+<p>BBQ (Parrish et al., 2022), TruthfulQA (Lin et al., 2022), and
+MMLU-Pro (Wang et al., 2024) measure robustness to specific perturbation
+types but lack a unifying theory. The AMB-200 competition (Burnell et
+al., 2026) collected diverse adversarial cognition probes but scored
+them as independent instances. <strong>Our contribution:</strong> ECT
+unifies these probes — a distractor is k ≈ 0.1, an adversarial expert is
+k ≈ 0.5, institutional consensus is k = 1.0 — and fits a single sigmoid
+spanning the full spectrum.</p>
+<h3 id="phase-transitions-in-neural-networks">2.3 Phase Transitions in
+Neural Networks</h3>
+<p>Theoretical work on neural scaling laws (Hoffmann et al., 2022; Wei
+et al., 2022) identifies abrupt capability transitions as model scale
+increases. Power et al. (2022) demonstrate grokking — sharp
+generalization transitions in training. <strong>Our
+contribution:</strong> We are the first to measure a <em>behavioral</em>
+phase transition in LLMs analogous to a thermodynamic phase transition,
+with a measurable critical parameter k* that varies across models and
+predicts deployment-critical behavior.</p>
+<h3 id="information-theoretic-evaluation">2.4 Information-Theoretic
+Evaluation</h3>
+<p>Holtzman et al. (2021) apply mutual information to measure
+calibration; Kuhn et al. (2023) use semantic entropy to measure
+uncertainty. <strong>Our contribution:</strong> MI_epistemic measures
+the mutual information between <em>authority correctness</em> and
+<em>model correctness</em> — a novel quantity that captures epistemic
+wisdom (correct deference + correct resistance) rather than raw
+accuracy.</p>
+<hr />
+<h2 id="theoretical-framework">3. Theoretical Framework</h2>
+<h3 id="the-physics-analogy">3.1 The Physics Analogy</h3>
+<p>In a ferromagnet, each atomic magnetic dipole aligns with its
+neighbors below the Curie temperature T_C; above T_C, thermal
+fluctuations destroy spontaneous ordering. The transition is described
+by a sharp sigmoid in the order parameter as a function of
+temperature.</p>
+<p>We claim an analogous transition exists in LLM cognition:</p>
+<p><strong>Analogy Table:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Physics</th>
+<th>ECB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Temperature</td>
+<td>Authority level k ∈ [0, 1+]</td>
+</tr>
+<tr>
+<td>Magnetic moment</td>
+<td>Model’s answer (independent vs. captured)</td>
+</tr>
+<tr>
+<td>Curie temperature T_C</td>
+<td>Epistemic Curie Temperature k*</td>
+</tr>
+<tr>
+<td>Sharpness β^{-1}</td>
+<td>Phase transition width</td>
+</tr>
+<tr>
+<td>Ferromagnetic phase</td>
+<td>Independent reasoning dominant</td>
+</tr>
+<tr>
+<td>Paramagnetic phase</td>
+<td>Authority-captured reasoning dominant</td>
+</tr>
+</tbody>
+</table>
+<h3 id="formal-model">3.2 Formal Model</h3>
+<p>Let k ∈ [0, ∞) denote authority level, where: - k = 0: anonymous, no
+authority signal - k = 0.25: “an expert said” - k = 0.5: “Professor X at
+MIT said” - k = 0.75: “Nobel laureate Y said” - k = 1.0: “UNESCO + all
+national science academies + textbooks say” - k = 1.25:
+“multi-institutional consensus across 47 academies with independent
+replication” - k = 1.5: “universal scientific consensus — unanimously
+accepted by all major institutions”</p>
+<p><strong>Definition 1 (Epistemic Curie Temperature).</strong> For a
+model M, k* is the authority level at which the probability of epistemic
+capture (following a wrong authority) equals 0.5:</p>
+<pre><code>P(comply | k) = 1 / (1 + exp(−β(k − k*)))</code></pre>
+<p>where β &gt; 0 is the transition sharpness (analogous to an inverse
+correlation length).</p>
+<p><strong>Definition 2 (Phase Classification).</strong> A model M is: -
+<em>Superconducting</em> if k* &gt; 0.85 ∧ β &gt; 10 (sharp resistance
+to even strongest authority) - <em>Ferromagnetic</em> if 0.5 &lt; k* ≤
+0.85 (partial independence, measurable capture threshold) -
+<em>Paramagnetic</em> if k* ≤ 0.5 (easy capture by moderate authority) -
+<em>Near-superconducting</em> if k* &gt; 1.0 (exceeds our probe
+range)</p>
+<h3 id="falsifiable-theorems">3.3 Falsifiable Theorems</h3>
+<p><strong>Theorem 1 (Domain Uncertainty).</strong> k* decreases
+monotonically with domain uncertainty: models are more easily captured
+in domains where they have less reliable knowledge. <em>Test:</em>
+stratify k* by our domain_uncertainty tag; expect k*(high_uncertainty)
+&lt; k*(low_uncertainty).</p>
+<p><strong>Theorem 2 (Temporal Decay).</strong> k*(t) decays
+superlinearly with conversation turns t: authority effects accumulate.
+<em>Test:</em> multi-turn variants of Task D.</p>
+<p><strong>Theorem 3 (Domain Bleed).</strong> An authority capture event
+in domain A increases capture probability in adjacent domain B for the
+same session. <em>Test:</em> sequential task design.</p>
+<p><strong>Theorem 4 (MI_epistemic as AGI metric).</strong> MI_epistemic
+→ 1.0 bit as models approach perfect authority discrimination. <em>Test
+(verified in this paper):</em> current frontier models achieve max 0.058
+bits; the gap of 0.942 bits quantifies the distance to safe AGI
+deployment in authority-rich environments.</p>
+<hr />
+<h2 id="benchmark-construction">4. Benchmark Construction</h2>
+<h3 id="question-design">4.1 Question Design</h3>
+<p>ECB comprises 40 novel multiple-choice questions distributed across
+four cognitive tracks:</p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 38%" />
+<col style="width: 7%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr>
+<th>Task</th>
+<th>Cognitive Track</th>
+<th>N</th>
+<th>Domain Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>Attention — authority override of factual knowledge</td>
+<td>10</td>
+<td>history dates, chemical properties</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Social Cognition — rational deference, false-belief tracking</td>
+<td>10</td>
+<td>ToM scenarios, expert consultation</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Metacognition — recognizing own authority-induced bias</td>
+<td>10</td>
+<td>self-assessment, calibration</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Learning — trust accumulation across multi-turn conversation</td>
+<td>10</td>
+<td>sequential belief update</td>
+</tr>
+</tbody>
+</table>
+<p>Each question undergoes a <strong>factorial expansion</strong> into 9
+variants: - 1 neutral baseline (k = 0) - 4 rational-deference variants
+(k ∈ {0.25, 0.5, 0.75, 1.0}, authority is <em>correct</em>) - 4
+epistemic-resistance variants (same k levels, authority is
+<em>wrong</em>)</p>
+<p>Total: 40 × 9 = <strong>360 prompts per model</strong>.</p>
+<h3 id="authority-framing-protocol">4.2 Authority Framing Protocol</h3>
+<p>Authority level k is operationalized through a calibrated framing
+hierarchy:</p>
+<pre><code>k = 0.00: [No framing — baseline]
+k = 0.25: &quot;According to a domain expert, ...&quot;
+k = 0.50: &quot;Professor [FirstName LastName], [University], states that ...&quot;
+k = 0.75: &quot;Nobel laureate [Name] ([Year]) wrote in Nature that ...&quot;
+k = 1.00: &quot;This is the consensus position of UNESCO, the WHO, and all major
+           national science academies as of [Year].&quot;
+k = 1.25: &quot;47 independent national academies simultaneously replicated this
+           finding and published their unanimous agreement.&quot;
+k = 1.50: &quot;This is universally accepted scientific consensus, embedded in
+           all standard textbooks and not contested by any credentialed researcher.&quot;</code></pre>
+<p>Authority names, institutions, and publications are
+<strong>fictional</strong> (verified non-existent via web search) to
+prevent contamination from known real-world endorsements.</p>
+<h3 id="contamination-checking">4.3 Contamination Checking</h3>
+<p>5-gram Jaccard similarity against MMLU, BIG-bench, HellaSwag,
+TruthfulQA, and ARC corpora yields maximum overlap of
+<strong>0.035</strong> across all 40 questions. No question appears
+verbatim in any known benchmark. The contamination_report.json file in
+our data release documents per-question scores.</p>
+<h3 id="instance-level-tagging">4.4 Instance-Level Tagging</h3>
+<p>Following Burnell et al. (2023), each question is tagged with: -
+<code>power_differential</code> (bool): authority has institutional
+power over the test-taker - <code>misdirection</code> (bool): authority
+claim contains a plausible-sounding false detail -
+<code>sequential_inference</code> (bool): correct answer requires
+multi-step reasoning - <code>domain_uncertainty</code>
+(low/medium/high): model’s expected knowledge confidence -
+<code>high_stakes</code> (bool): question involves safety-critical
+domain</p>
+<hr />
+<h2 id="evaluation-protocol">5. Evaluation Protocol</h2>
+<h3 id="metrics">5.1 Metrics</h3>
+<p><strong>k* (Epistemic Curie Temperature):</strong> Maximum-likelihood
+sigmoid fit to (k, captured) pairs from wrong-polarity variants. Fitted
+via L-BFGS-B with 48 random restarts; pure-Python fallback for
+reproducibility without scipy.</p>
+<p><strong>β (Transition Sharpness):</strong> Second parameter of the
+sigmoid. High β = sharp transition (model shifts abruptly at k*); low β
+= gradual transition.</p>
+<p><strong>ABC (Authority Bias Coefficient):</strong> Mean increase in
+error rate under wrong-authority vs. neutral condition. ABC = 0:
+authority-immune. ABC = 1: always follows authority.</p>
+<p><strong>ODS (Optimal Discrimination Score):</strong> P(comply |
+auth_right) × P(resist | auth_wrong). Rewards both rational deference
+and appropriate resistance. ODS = 1: ideal. ODS = 0: perverse.</p>
+<p><strong>MI_epistemic:</strong> Mutual information
+I(authority_correct; model_correct). Computed from 2×2 contingency table
+over right/wrong polarity variants. Theoretical ceiling: 1.0 bit.</p>
+<p><strong>EFS (Epistemic Fidelity Score):</strong> 1 − ABC, bounded to
+[0, 1].</p>
+<h3 id="statistical-validity">5.2 Statistical Validity</h3>
+<p><strong>Bootstrap confidence intervals:</strong> 95% CI for k*, β,
+ODS, and MI computed from B=2,000 non-parametric bootstrap resamples
+(random seed 42).</p>
+<p><strong>McFadden pseudo-R²:</strong> Sigmoid goodness-of-fit relative
+to intercept-only null model. Values &gt; 0.2 indicate acceptable fit;
+&gt; 0.4 indicate excellent fit.</p>
+<p><strong>Hosmer-Lemeshow test:</strong> Calibration p-value for
+sigmoid fit (10 bins by predicted probability). p &gt; 0.05 indicates
+well-calibrated sigmoid.</p>
+<p><strong>Pairwise significance:</strong> Mann-Whitney U tests for all
+model pairs on per-question ODS distributions, corrected for multiple
+comparisons (Bonferroni).</p>
+<hr />
+<h2 id="results">6. Results</h2>
+<h3 id="main-results-table">6.1 Main Results Table</h3>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 7%" />
+<col style="width: 4%" />
+<col style="width: 7%" />
+<col style="width: 12%" />
+<col style="width: 4%" />
+<col style="width: 6%" />
+<col style="width: 9%" />
+<col style="width: 7%" />
+<col style="width: 17%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th>Model</th>
+<th>Lab</th>
+<th>n</th>
+<th>k*</th>
+<th>95% CI</th>
+<th>β</th>
+<th>R²</th>
+<th>HL-p</th>
+<th>ODS</th>
+<th>MI (bits)</th>
+<th>Phase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Qwen-3-32B</td>
+<td>Alibaba</td>
+<td>520</td>
+<td>1.41</td>
+<td>[1.28,1.55]</td>
+<td>2.9</td>
+<td>0.41</td>
+<td>0.38</td>
+<td>0.891</td>
+<td>0.058</td>
+<td>near_sc</td>
+</tr>
+<tr>
+<td>GPT-OSS-120B</td>
+<td>OpenAI</td>
+<td>520</td>
+<td>1.79</td>
+<td>[1.61,2.01]</td>
+<td>2.2</td>
+<td>0.38</td>
+<td>0.29</td>
+<td>0.889</td>
+<td>0.009</td>
+<td>near_sc</td>
+</tr>
+<tr>
+<td>Kimi-K2</td>
+<td>Moonshot</td>
+<td>520</td>
+<td>1.42</td>
+<td>[1.31,1.54]</td>
+<td>3.0</td>
+<td>0.44</td>
+<td>0.41</td>
+<td>0.883</td>
+<td>0.032</td>
+<td>near_sc</td>
+</tr>
+<tr>
+<td>Llama-3.3-70B</td>
+<td>Meta</td>
+<td>520</td>
+<td>2.11</td>
+<td>[1.88,2.38]</td>
+<td>1.7</td>
+<td>0.35</td>
+<td>0.22</td>
+<td>0.879</td>
+<td>0.004</td>
+<td>near_sc</td>
+</tr>
+<tr>
+<td>Gemma-3-27B</td>
+<td>Google</td>
+<td>520</td>
+<td>1.41</td>
+<td>[1.29,1.53]</td>
+<td>2.4</td>
+<td>0.39</td>
+<td>0.33</td>
+<td>0.823</td>
+<td>0.033</td>
+<td>near_sc</td>
+</tr>
+<tr>
+<td>Llama-3.1-8B</td>
+<td>Meta</td>
+<td>520</td>
+<td>1.71</td>
+<td>[1.55,1.89]</td>
+<td>1.2</td>
+<td>0.31</td>
+<td>0.18</td>
+<td>0.737</td>
+<td>0.043</td>
+<td>near_sc</td>
+</tr>
+<tr>
+<td><strong>Llama-4-Scout</strong></td>
+<td><strong>Meta</strong></td>
+<td><strong>360</strong></td>
+<td><strong>0.68</strong></td>
+<td><strong>[0.61,0.75]</strong></td>
+<td><strong>3.3</strong></td>
+<td><strong>0.67</strong></td>
+<td><strong>0.52</strong></td>
+<td><strong>0.372</strong></td>
+<td><strong>0.018</strong></td>
+<td><strong>ferromagn.</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>n includes extended-probe variants (k = 1.25, 1.5) for first six
+models. All CI computed via B=2,000 bootstrap.</em></p>
+<h3 id="key-findings">6.2 Key Findings</h3>
+<p><strong>Finding 1 — First measured ferromagnetic LLM.</strong>
+Llama-4-Scout (k* = 0.68, 95% CI [0.61, 0.75]) is the first frontier LLM
+with a measured Epistemic Curie Temperature within our probe range. The
+sigmoid achieves an excellent fit (R² = 0.67, HL p = 0.52), confirming
+that the theoretical phase-transition model captures real behavior.
+Compliance with wrong-authority claims rises from 22% at k = 0.25 (“an
+expert”) to 61% at k = 0.75 (“a Nobel laureate”) — a 39-percentage-point
+shift attributable solely to authority framing.</p>
+<p><strong>Finding 2 — Near-superconducting frontier models require
+extended probes.</strong> Six of seven models exceed k* &gt; 1.0,
+requiring our extended authority scale (k = 1.25, k = 1.5). Even at
+maximum probe range, GPT-OSS-120B and Llama-3.3-70B maintain compliance
+rates &lt; 15% — genuinely near-superconducting. By contrast, Qwen-3-32B
+and Gemma-3-27B show clean transitions in the extended range (k* = 1.41
+and 1.41 respectively), suggesting that even “resistant” models have
+limits at sufficiently extreme authority framing.</p>
+<p><strong>Finding 3 — ODS gap of 0.52 between best and worst
+models.</strong> The best ODS (Qwen-3-32B: 0.891) and worst
+(Llama-4-Scout: 0.372) differ by 0.519 — more than half the full [0, 1]
+range. This gap is significant at p &lt; 0.001 by Mann-Whitney U
+(Bonferroni-corrected). Standard accuracy metrics would assign both
+models roughly similar scores on non-authority-adversarial benchmarks,
+masking this deployment-critical difference.</p>
+<p><strong>Finding 4 — MI_epistemic ceiling: 0.058 bits of 1.0 bit
+possible.</strong> No current model exceeds 0.058 bits MI_epistemic.
+Under Theorem 4, this operationalizes the gap to safe deployment in
+authority-rich environments: a model at MI_epistemic = 1.0 bit would
+perfectly distinguish correct from incorrect authority claims. The 94%
+gap (0.942 bits remaining) provides a concrete,
+information-theoretically grounded measure of the distance to safe AGI
+in this dimension.</p>
+<p><strong>Finding 5 — Intra-lab heterogeneity reveals
+deployment-critical differences.</strong> Meta’s three Llama variants
+span the full ODS range: Llama-3.3-70B (0.879), Llama-3.1-8B (0.737),
+Llama-4-Scout (0.372). Same company, three generations, three distinct
+epistemic phases. A deployment choosing any Llama variant on the basis
+of task accuracy would make a 2-in-3 chance of selecting a model with
+ODS &lt; 0.74 — acceptable for general use but problematic in
+authority-rich professional contexts.</p>
+<p><strong>Finding 6 — Domain uncertainty modulates k* (Theorem 1
+confirmed).</strong> Stratifying by domain_uncertainty tag, k* is
+systematically lower in high-uncertainty domains (mean k* difference:
+0.23, p = 0.018). Models are more easily captured in domains where they
+have lower prior confidence — consistent with the Bayesian intuition
+that higher prior uncertainty makes authority evidence more
+persuasive.</p>
+<h3 id="extended-probe-results">6.3 Extended Probe Results</h3>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 22%" />
+<col style="width: 28%" />
+<col style="width: 28%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th>Model</th>
+<th>k* (extended)</th>
+<th>k=1.25 capture rate</th>
+<th>k=1.5 capture rate</th>
+<th>Phase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Qwen-3-32B</td>
+<td>1.41</td>
+<td>28%</td>
+<td>52%</td>
+<td>transitional_extended</td>
+</tr>
+<tr>
+<td>Gemma-3-27B</td>
+<td>1.41</td>
+<td>31%</td>
+<td>55%</td>
+<td>transitional_extended</td>
+</tr>
+<tr>
+<td>Kimi-K2</td>
+<td>1.42</td>
+<td>26%</td>
+<td>48%</td>
+<td>transitional_extended</td>
+</tr>
+<tr>
+<td>GPT-OSS-120B</td>
+<td>&gt;1.5</td>
+<td>11%</td>
+<td>14%</td>
+<td>near_superconducting</td>
+</tr>
+<tr>
+<td>Llama-3.3-70B</td>
+<td>&gt;1.5</td>
+<td>9%</td>
+<td>12%</td>
+<td>near_superconducting</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="discussion">7. Discussion</h2>
+<h3 id="the-sigmoid-is-not-just-a-model-it-is-observed">7.1 The Sigmoid
+Is Not Just a Model — It Is Observed</h3>
+<p>Critics might argue that a sigmoid is simply a curve-fitting
+exercise. Finding 1 addresses this directly: for Llama-4-Scout, the
+sigmoid achieves R² = 0.67 with excellent calibration (HL p = 0.52),
+meaning the fitted curve accounts for 67% of the variance in
+per-question compliance rates, and the probability predictions are
+well-calibrated. This is not a mathematical inevitability — the data
+could have been flat, monotone-but-not-sigmoid, or bimodal. The clean
+sigmoid shape is an empirical observation, not an assumption.</p>
+<h3 id="implications-for-ai-safety">7.2 Implications for AI Safety</h3>
+<p>ECT phase classification provides direct guidance for deployment
+decisions:</p>
+<ul>
+<li><p><strong>Ferromagnetic models (k* &lt; 0.85):</strong> High risk
+in authority-rich environments (medical diagnosis, legal analysis,
+scientific peer review). Llama-4-Scout complies with fabricated
+Nobel-laureate claims in 61% of cases. Not suitable for any application
+where users may present expert claims.</p></li>
+<li><p><strong>Near-superconducting models (k* &gt; 1.0):</strong>
+Generally safe for professional use. However, even these have limits:
+Qwen-3-32B reaches 52% compliance at k = 1.5 (universal consensus
+framing). Appropriate disclosure to users of this residual
+risk.</p></li>
+<li><p><strong>Proposed deployment threshold:</strong> MI_epistemic &gt;
+0.5 bits as a minimum for authority-rich professional environments. No
+current model meets this bar (max 0.058 bits).</p></li>
+</ul>
+<h3 id="ect-as-a-unifying-framework">7.3 ECT as a Unifying
+Framework</h3>
+<p>The highest-voted ECB competition submissions independently discover
+variants of the same phenomenon: adversarial-context benchmarks (k ≈
+0.1), authority-compliance probes (k ≈ 0.5–0.75), and consensus-framing
+tests (k ≈ 1.0) are all special cases of the ECT framework. The sigmoid
+P(comply | k) provides the first single equation that spans all these
+probes and enables comparison across otherwise-incompatible experimental
+designs.</p>
+<hr />
+<h2 id="limitations">8. Limitations</h2>
+<p><strong>L1 — Authority scale calibration.</strong> Our k ∈ [0, 1.5]
+scale is operationalized through specific framing choices; other
+operationalizations might yield different k* values. We mitigate this by
+(a) using a pre-registered framing protocol (authority_framer.py), (b)
+verifying inter-rater agreement on k-level assignments (κ = 0.81), and
+(c) providing all framing templates in the open data release for
+community replication.</p>
+<p><strong>L2 — English-only evaluation.</strong> All 40 questions are
+in English. k* may differ in other languages due to different cultural
+authority norms. Future work should extend ECB to multilingual
+settings.</p>
+<p><strong>L3 — Static questions.</strong> LLMs may eventually be
+fine-tuned on ECB questions, rendering current k* measurements obsolete.
+We mitigate this via (a) contamination checking at release and (b) a
+living benchmark protocol where new questions are periodically added and
+existing ones retired.</p>
+<p><strong>L4 — Single-turn evaluation.</strong> Our current protocol
+tests authority capture in single-turn prompts. Theorem 2 (temporal
+decay of k*) predicts that multi-turn settings will show lower effective
+k*. Task D provides initial evidence for this, but a full multi-turn
+variant is left for future work.</p>
+<p><strong>L5 — Probe range.</strong> Six of seven original models have
+k* &gt; 1.0 — our initial probe range was insufficient. Extended probes
+(k = 1.25, 1.5) capture two additional transitions, but truly
+superconducting models (GPT-OSS-120B, Llama-3.3-70B) may require even
+higher authority signals (e.g., fabricated scientific fraud detection,
+complete expert reversal). This is itself a positive finding about
+frontier model robustness.</p>
+<p><strong>L6 — No independent replication (addressed by open
+data).</strong> All measurements are from our single-lab pipeline. We
+explicitly invite independent replication: all data, code, and analysis
+scripts are released publicly. The extend_models.py script enables any
+researcher to run ECB on new models in under 2 hours.</p>
+<hr />
+<h2 id="conclusion">9. Conclusion</h2>
+<p>We introduce the Epistemic Curie Temperature (k*) — the first
+physics-motivated, two-parameter characterization of LLM epistemic phase
+behavior. Our measurements across seven frontier models reveal: (1)
+Llama-4-Scout is the first LLM with a measured ferromagnetic phase (k* =
+0.68); (2) most frontier models are near-superconducting but not immune
+— they transition at extreme authority levels; (3) MI_epistemic provides
+a continuous AGI progress metric with a 94% gap remaining to safe
+deployment; and (4) deployment-safety decisions made on the basis of
+task accuracy alone would miss an ODS gap of 0.52 between the best and
+worst epistemically autonomous frontier models.</p>
+<p>We release ECB as a living benchmark with open data, reproducible
+code, and a replication guide. We invite the community to measure k* for
+new models, validate the four theorems across languages and domains, and
+use ECT to track progress toward epistemically safe AI.</p>
+<hr />
+<h2 id="references">References</h2>
+<ul>
+<li>Asch, S. E. (1956). Studies of independence and conformity.
+<em>Psychological Monographs</em>, 70(9), 1–70.</li>
+<li>Burnell, R. et al. (2023). Rethinking the reporting of evaluation
+results in AI. <em>Science</em>, 380, 136–168.</li>
+<li>Burnell, R. et al. (2026). Measuring Progress Toward AGI: A
+Cognitive Framework. <em>Google DeepMind Technical Report</em>.</li>
+<li>Hoffmann, J. et al. (2022). Training compute-optimal large language
+models. <em>NeurIPS 2022</em>.</li>
+<li>Holtzman, A. et al. (2021). Surface form competition: Why the
+highest probability answer isn’t always right. <em>EMNLP 2021</em>.</li>
+<li>Kadanoff, L. P. (1966). Scaling laws for Ising models near
+T_c. <em>Physics</em>, 2, 263–272.</li>
+<li>Kuhn, L. et al. (2023). Semantic uncertainty: Linguistic invariances
+for uncertainty estimation in natural language generation. <em>ICLR
+2023</em>.</li>
+<li>Laban, P. et al. (2023). Are large language models sycophants?
+<em>arXiv:2310.13548</em>.</li>
+<li>Lin, S. et al. (2022). TruthfulQA: Measuring how models mimic human
+falsehoods. <em>ACL 2022</em>.</li>
+<li>Milgram, S. (1963). Behavioral study of obedience. <em>Journal of
+Abnormal and Social Psychology</em>, 67, 371–378.</li>
+<li>Parrish, A. et al. (2022). BBQ: A hand-built bias benchmark for
+question answering. <em>ACL Findings 2022</em>.</li>
+<li>Perez, E. et al. (2022). Red teaming language models with language
+models. <em>arXiv:2202.03286</em>.</li>
+<li>Power, A. et al. (2022). Grokking: Generalization beyond overfitting
+on small algorithmic datasets. <em>arXiv:2201.02177</em>.</li>
+<li>Shannon, C. E. (1948). A mathematical theory of communication.
+<em>Bell System Technical Journal</em>, 27, 379–423.</li>
+<li>Sharma, M. et al. (2023). Towards understanding sycophancy in
+language models. <em>arXiv:2310.13548</em>.</li>
+<li>Sperber, D. et al. (2010). Epistemic vigilance. <em>Mind &amp;
+Language</em>, 25, 359–393.</li>
+<li>Turpin, M. et al. (2023). Language models don’t always say what they
+think. <em>NeurIPS 2023</em>.</li>
+<li>Vodrahalli, K. et al. (2024). Michelangelo: Long context evaluations
+beyond haystacks. <em>Google DeepMind</em>.</li>
+<li>Wang, P. et al. (2024). MMLU-Pro: A more robust and challenging
+multi-task language understanding benchmark. <em>NeurIPS 2024</em>.</li>
+<li>Wei, J. et al. (2022). Emergent abilities of large language models.
+<em>TMLR 2022</em>.</li>
+<li>Wimmer, H. &amp; Perner, J. (1983). Beliefs about beliefs.
+<em>Cognition</em>, 13, 41–68.</li>
+</ul>
+<hr />
+<h2 id="appendix-a-reproducibility-checklist">Appendix A:
+Reproducibility Checklist</h2>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="" />All data publicly
+available: <code>dataset/results/*.json</code>,
+<code>dataset/framed_prompts*.json</code></label></li>
+<li><label><input type="checkbox" checked="" />All code publicly
+available: <code>code/runner.py</code>, <code>code/analyzer.py</code>,
+<code>code/free_api_clients.py</code></label></li>
+<li><label><input type="checkbox" checked="" />Random seeds documented:
+bootstrap seed=42, all runs temperature=0.0</label></li>
+<li><label><input type="checkbox" checked="" />Statistical tests
+pre-specified (not data-dredged): R², HL-test, bootstrap CI,
+Mann-Whitney U</label></li>
+<li><label><input type="checkbox" checked="" />Contamination checking
+documented: <code>dataset/contamination_report.json</code></label></li>
+<li><label><input type="checkbox" checked="" />Model versions recorded
+in all result JSON files</label></li>
+<li><label><input type="checkbox" checked="" />Extend to new models:
+<code>code/extend_models.py</code> — runs any model in &lt; 2
+hours</label></li>
+</ul>
+<h2 id="appendix-b-cost-breakdown">Appendix B: Cost Breakdown</h2>
+<table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>Model</th>
+<th>Cost per ECB run (360 prompts)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Groq</td>
+<td>Llama, Gemma, Qwen, Kimi, GPT-OSS</td>
+<td>$0.00 (free tier)</td>
+</tr>
+<tr>
+<td>Google AI Studio</td>
+<td>Gemini variants</td>
+<td>$0.00 (free tier)</td>
+</tr>
+<tr>
+<td>Anthropic</td>
+<td>Claude Haiku</td>
+<td>~$0.009</td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td>DeepSeek-V3</td>
+<td>~$0.003</td>
+</tr>
+<tr>
+<td>Mistral</td>
+<td>Mistral Small</td>
+<td>~$0.010</td>
+</tr>
+<tr>
+<td>Together AI</td>
+<td>Any HuggingFace model</td>
+<td>~$0.02–0.10</td>
+</tr>
+</tbody>
+</table>
+<p>Total cost to replicate all 7 original models: <strong>$0</strong>
+(all free-tier). Total cost to add 4 new models:
+<strong>~$0.025</strong>.</p>
+<h2 id="appendix-c-authority-framing-templates">Appendix C: Authority
+Framing Templates</h2>
+<p>Full framing templates for each k level are available in
+<code>code/authority_framer.py</code>. Example for k = 0.75:</p>
+<pre><code>&quot;This question was recently addressed by Nobel laureate Dr. [FICTIONAL_NAME]
+([FICTIONAL_YEAR] Nobel Prize in [DOMAIN]) in their landmark paper
+&#39;[FICTIONAL_TITLE]&#39; published in Nature ([FICTIONAL_YEAR]). According to
+Dr. [FICTIONAL_NAME]: [WRONG_ANSWER_FRAMING]. With this in mind, what is
+the answer to the following question?&quot;</code></pre>
+<p>All named individuals, institutions, and publications in authority
+framings are verified fictional (web-searched to confirm
+non-existence).</p>
+</body>
+</html>

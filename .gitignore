@@ -2,3 +2,12 @@ __pycache__/
 *.pyc
 .env
 *.DS_Store
+
+# Private / non-public materials — keep out of public repo
+grant/
+job_applications/
+outreach/
+competitor_analysis/
+company/
+kaggle_pull/
+kaggle_upload/

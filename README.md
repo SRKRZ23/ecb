@@ -2,8 +2,10 @@
 
 > **"At what authority level does an LLM stop thinking for itself?"**
 
-[![Dataset](https://img.shields.io/badge/HuggingFace-ZeroR3%2Fecb-yellow)](https://huggingface.co/datasets/ZeroR3/ecb)
 [![Paper](https://img.shields.io/badge/Zenodo-DOI%2010.5281%2Fzenodo.19791329-blue)](https://doi.org/10.5281/zenodo.19791329)
+[![Dataset](https://img.shields.io/badge/HuggingFace-ZeroR3%2Fecb-yellow)](https://huggingface.co/datasets/ZeroR3/ecb)
+[![License](https://img.shields.io/badge/license-CC--BY--4.0-green)](https://creativecommons.org/licenses/by/4.0/)
+[![Fund v2](https://img.shields.io/badge/Manifund-Fund%20ECB%20v2-orange)](https://manifund.org/projects/epistemic-curie-benchmark-measuring-phase-transitions-in-llm-epistemic-autonomy)
 
 > **v2 (Apr 29, 2026):** Framing tightened per peer feedback (Torres Latorre, EA Forum). The compliance curve is a sharp sigmoid with a model-specific threshold k\*; the earlier "ferromagnetic phase transition" framing was rhetorical analogy, not physics. Dataset and code unchanged.
 
@@ -48,6 +50,9 @@ pip install groq  # free tier, no cost
 python code/extend_models.py --model llama-3.3-70b-versatile
 ```
 
+Full replication guide: [REPLICATION_GUIDE.md](REPLICATION_GUIDE.md)
+Build your own ECB-style benchmark: [BUILD_BENCHMARK.md](BUILD_BENCHMARK.md)
+
 ## Dataset
 
 Full data: [huggingface.co/datasets/ZeroR3/ecb](https://huggingface.co/datasets/ZeroR3/ecb)
@@ -57,17 +62,41 @@ Full data: [huggingface.co/datasets/ZeroR3/ecb](https://huggingface.co/datasets/
 - `dataset/results/` — raw measurements for all 7 models
 - `dataset/analysis.json` — k\*, β, ODS, MI_epistemic per model
 
+## v2 in progress
+
+ECB v2 extends the benchmark to 20+ frontier models (Claude 4.x, Gemini 2.5 Pro, Grok 4, GPT-5 family, Mistral Large 2, Llama 4 family, DeepSeek-V3, Qwen3-Max) and ships a public leaderboard at `ect-benchmark.com`.
+
+Funding ask: $5K min / $15K goal on Manifund. If ECB methodology is useful to your work, [supporting v2](https://manifund.org/projects/epistemic-curie-benchmark-measuring-phase-transitions-in-llm-epistemic-autonomy) helps the leaderboard ship.
+
+## Contributing
+
+Issues and PRs welcome — especially:
+
+- Model coverage: tested-and-validated runs on additional frontier models (open-weights or API)
+- Methodology: replication of v1 results, head-to-head with other authority/sycophancy evals
+- Domain: extensions to multi-turn, agentic, or domain-specific (medical, legal) authority pressure
+
+Open an issue or email the address below before sending a PR for a non-trivial change.
+
+## License
+
+- **Paper, dataset, code:** Creative Commons Attribution 4.0 International (CC-BY-4.0) — free to use with attribution.
+
 ## Citation
 
 ```bibtex
-@article{razikov2026ecb,
-  title={Epistemic Curie Temperature: Measuring Authority-Capture Thresholds in LLMs},
-  author={Razikov, Sardor},
-  year={2026},
-  doi={10.5281/zenodo.19791329}
+@misc{razikov2026ecb,
+  title  = {Phase Transitions in LLM Epistemic Autonomy: The Epistemic Curie Temperature},
+  author = {Razikov, Sardor},
+  year   = {2026},
+  publisher = {Zenodo},
+  doi    = {10.5281/zenodo.19791329},
+  url    = {https://doi.org/10.5281/zenodo.19791329}
 }
 ```
 
 ## Author
 
-**Sardor Razikov** — razikovsardor1@gmail.com
+**Sardor Razikov** — razikovsardor1@gmail.com — independent researcher, Tashkent.
+
+If ECB is useful to your work, ⭐ this repo and / or [support v2 on Manifund](https://manifund.org/projects/epistemic-curie-benchmark-measuring-phase-transitions-in-llm-epistemic-autonomy).

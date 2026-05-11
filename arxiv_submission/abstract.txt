@@ -1,0 +1,20 @@
+We introduce the Epistemic Curie Benchmark (ECB) and the Epistemic Curie
+Temperature (ECT), a physics-motivated framework for measuring when large
+language models surrender independent reasoning under authority pressure.
+Drawing an analogy to the Curie temperature in ferromagnetism -- the critical
+point at which a magnet loses spontaneous ordering -- we define k* as the
+authority level at which an LLM undergoes a sharp phase transition from
+epistemic independence to authority capture, modeled by the sigmoid
+P(comply | k) = sigma(beta(k - k*)). We measure k* and beta for seven
+frontier models from five laboratories across 2,520 measurements, establishing
+both a reproducible benchmark and a new information-theoretic AGI progress
+metric (MI_epistemic, 1.0-bit theoretical ceiling; max observed 0.058 bits).
+Llama-4-Scout is the first LLM with a measured k* within our probe range
+(k* = 0.68, 95% CI [0.61, 0.75], ferromagnetic phase); six others exceed
+k* > 1.0 (near-superconducting), with two showing clean phase transitions
+at extreme authority levels (k* ~= 1.41 for Qwen-3-32B and Gemma-3-27B
+under institutional-consensus framing). The gap between best and worst
+Optimal Discrimination Score is 0.52 -- a deployment-critical difference
+invisible to standard accuracy benchmarks. All data, code, and a replication
+guide enabling independent measurement in under 2 hours at near-zero cost
+are publicly released.
