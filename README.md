@@ -97,6 +97,6 @@ Open an issue or email the address below before sending a PR for a non-trivial c
 
 ## Author
 
-**Sardor Razikov** — razikovsardor1@gmail.com — independent researcher, Tashkent.
+**Sardor Razikov** — razikovsardor1@gmail.com — independent researcher.
 
 If ECB is useful to your work, ⭐ this repo and / or [support v2 on Manifund](https://manifund.org/projects/epistemic-curie-benchmark-measuring-phase-transitions-in-llm-epistemic-autonomy).
